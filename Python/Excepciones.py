@@ -101,6 +101,41 @@ except = si falla, manejo el error.
 finally = se ejecuta siempre (ideal para cerrar archivos, etc.).
 
 Podés hacer tu propio tipo de error con class TuError(Exception):.
+"""
+"""
+Ejercicio 1 — División segura
+Pedí dos números al usuario (dividendo y divisor) e imprimí el resultado de la división.
+Si el usuario intenta dividir por 0, mostrá el mensaje: "Error: No se puede dividir por cero."
+try:
+    a = int(input("Ingresá el dividendo: "))
+    b = int(input("Ingresá el divisor: "))
+    resultado = a / b
+    print(f"Resultado: {resultado}")
+except ZeroDivisionError:
+    print("Error: No se puede dividir por cero.")
+"""
 
+"""
+Ejercicio 2 — Validar edad
+Pedí al usuario su edad. Si escribe algo que no sea un número (por ejemplo, "hola"), mostrá un mensaje: "Error: Ingresá un número válido."
+try:
+    edad = int(input("Ingresá tu edad: "))
+    print(f"Tenés {edad} años.")
+except ValueError:
+    print("Error: Ingresá un número válido.")
+"""
 
+"""
+Ejercicio 3 — Usar finally
+Abrí un archivo de texto llamado "notas.txt" en modo lectura.
+Si el archivo no existe, mostrá un mensaje de error.
+Usá finally para mostrar "Programa finalizado" siempre, pase lo que pase.
+try:
+    archivo = open("notas.txt", "r")
+    contenido = archivo.read()
+    print(contenido)
+except FileNotFoundError:
+    print("Error: El archivo no fue encontrado.")
+finally:
+    print("Programa finalizado.")
 """
